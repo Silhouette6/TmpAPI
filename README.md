@@ -63,6 +63,12 @@ uv run tmpapi server --port 8686 --provider doubao
 
 ### 4. 使用
 
+可以先尝试运行测试样例：
+
+```bash
+uv run python tests/langchain_demo.py
+```
+
 配置任意 OpenAI SDK 客户端（模型名会自动适配当前 Provider）：
 
 ```python
