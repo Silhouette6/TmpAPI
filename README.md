@@ -25,7 +25,7 @@ uv sync
 
 ### 2. 登录
 
-首次使用需要先登录，工具会打开浏览器让你手动完成登录：
+首次使用需要先登录，工具会指导你打开浏览器让你手动完成登录：
 
 ```bash
 uv run tmpapi login
@@ -63,7 +63,7 @@ uv run tmpapi server --port 8686 --provider doubao
 
 ### 4. 使用
 
-可以先尝试运行测试样例：
+可以先尝试运行langchain demo测试样例：
 
 ```bash
 uv run python tests/langchain_demo.py
