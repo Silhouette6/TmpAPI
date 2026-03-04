@@ -1,0 +1,28 @@
+[project]
+name = "tmpapi"
+version = "0.1.0"
+description = "Browser RPA tool that mimics OpenAI API format using web chat interfaces"
+readme = "README.md"
+authors = [
+    { name = "Silhouette", email = "2326680050@qq.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "playwright",
+    "pydantic",
+    "click",
+    "sse-starlette",
+    "playwright-stealth",
+]
+
+[project.optional-dependencies]
+demo = ["langchain", "langchain-openai"]
+
+[project.scripts]
+tmpapi = "tmpapi.cli:cli"
+
+[build-system]
+requires = ["uv_build>=0.9.15,<0.10.0"]
+build-backend = "uv_build"

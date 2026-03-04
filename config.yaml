@@ -1,0 +1,58 @@
+# TmpAPI 配置文件
+# CLI 参数会覆盖此处的值
+
+# ── 服务器设置 ──────────────────────────────────────────────
+server:
+  host: "0.0.0.0"
+  port: 8686
+  log_level: "INFO"            # DEBUG / INFO / WARNING / ERROR
+
+# ── 浏览器设置 ──────────────────────────────────────────────
+browser:
+  headless: false               # false = 有头模式（可看到浏览器窗口），测试中，豆包好像要开着前端才能正常返回
+  channel: "auto"              # chrome / msedge / auto（自动检测）
+
+# ── Provider 设置 ───────────────────────────────────────────
+provider:
+  name: "doubao"             # 当前使用的模型提供商（deepseek / doubao / chatglm(暂时不可用) ）
+  profiles_dir: "profiles"     # 浏览器 profile 保存目录（相对于项目根目录）
+
+# ── DeepSeek 专项设置 ───────────────────────────────────────
+deepseek:
+  chat_url: "https://chat.deepseek.com"
+  login_url: "https://chat.deepseek.com/sign_in"
+  new_chat_every_request: false # true = 每次请求新建对话（清空上下文）; false = 在同一对话中继续
+  poll_interval: 0.4           # 流式响应轮询间隔（秒）
+  response_start_timeout: 120  # 等待回复开始的最大时间（秒）
+  idle_timeout: 3              # 文本无变化多久后判定生成完毕（秒）
+  min_generation_time: 3       # 最短生成时间保护（秒）
+  typing_delay_min: 0.015      # 模拟人类输入：每字符最小延迟（秒）
+  typing_delay_max: 0.040      # 模拟人类输入：每字符最大延迟（秒）
+  typing_burst_extra: 0.25     # 模拟人类输入：标点/停顿额外最大延迟（秒）
+
+# ── 豆包 AI (Doubao) 专项设置 ───────────────────────────────
+doubao:
+  chat_url: "https://www.doubao.com/chat/"
+  login_url: "https://www.doubao.com"
+  new_chat_every_request: false # true = 每次请求新建对话; false = 在同一对话中继续
+  poll_interval: 0.4           # 流式响应轮询间隔（秒）
+  response_start_timeout: 120  # 等待回复开始的最大时间（秒）
+  idle_timeout: 3              # 文本无变化多久后判定生成完毕（秒）
+  min_generation_time: 3       # 最短生成时间保护（秒）
+  typing_delay_min: 0.015      # 模拟人类输入：每字符最小延迟（秒）
+  typing_delay_max: 0.040      # 模拟人类输入：每字符最大延迟（秒）
+  typing_burst_extra: 0.25     # 模拟人类输入：标点/停顿额外最大延迟（秒）
+
+# ── 智谱清言 (ChatGLM) 专项设置 ─────────────────────────────
+chatglm:
+  chat_url: "https://chatglm.cn/main/alltoolsdetail"
+  login_url: "https://chatglm.cn"
+  new_chat_every_request: false # true = 每次请求新建对话; false = 在同一对话中继续
+  poll_interval: 0.4           # 流式响应轮询间隔（秒）
+  response_start_timeout: 120  # 等待回复开始的最大时间（秒）
+  idle_timeout: 3              # 文本无变化多久后判定生成完毕（秒）
+  min_generation_time: 3       # 最短生成时间保护（秒）
+  typing_delay_min: 0.8      # 模拟人类输入：每字符最小延迟（秒）
+  typing_delay_max: 0.9      # 模拟人类输入：每字符最大延迟（秒）
+  typing_burst_extra: 0.25     # 模拟人类输入：标点/停顿额外最大延迟（秒）
+
